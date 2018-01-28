@@ -25,5 +25,18 @@ tape('vfile-visit', function (t) {
     st.end();
   });
 
+  t.test('should be a copy of original file', function (st) {
+    var foo = vfile({path: 'foo'})
+
+    var bar = visit(foo, function (current) {
+      current.path = 'bar'
+    })
+
+    st.notSame(foo, bar)
+    st.ok(foo.path === 'foo')
+    st.ok(bar.path === 'bar')
+    st.end()
+  })
+
   t.end();
 });

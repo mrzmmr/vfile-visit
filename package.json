@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/mrzmmr/vfile-visit#readme",
   "dependencies": {
+    "clone": "^2.1.1",
     "vfile": "^2.3.0"
   },
   "devDependencies": {

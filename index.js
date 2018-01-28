@@ -1,13 +1,19 @@
 'use strict';
 
 var vfile = require('vfile');
+var clone = require('clone');
 
 module.exports = visit;
 
 function visit(file, callback) {
-  var root = vfile({contents: [file]});
-  var list = [file, root];
+  var root;
+  var list;
   var i;
+
+  file = clone(file);
+
+  root = vfile({contents: [file]});
+  list = [file, root];
 
   while (list.length > 0) {
     var current = list.shift();
