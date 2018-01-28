@@ -48,11 +48,21 @@ VFile {
 
 ### `read (file[, visitor])`
 
-#### `file` (`VFile` | `Object`) - File or object to walk over
-#### `visitor` (`Function?`) - Optional visitor to call while walking over nodes
-#### Returns `VFile`
+#### `file`
+`VFile` | `Object` - File or object to walk over
+
+#### `visitor`
+`Function?` - Optional visitor to call while walking over nodes
+
+**`Returns`** `VFile`
 
 #### `visitor (current, parent, index)`
-##### `current` (`VFile`) - current node
-##### `parent` (`VFile`) - parent of current node
-##### `index` (`Number`) - index of current in parent.contents
+
+##### `current`
+`VFile` - current node
+
+##### `parent`
+`VFile` - parent of current node
+
+##### `index`
+`Number` - index of current in parent.contents
