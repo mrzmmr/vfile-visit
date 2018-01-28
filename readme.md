@@ -53,11 +53,16 @@ VFile {
 
 ### `read (file[, visitor])`
 
-#### `file` (`VFile` | `Object`) - File or object to walk over
-#### `visitor` (`Function?`) - Optional visitor to call while walking over nodes
-#### Returns `VFile`
+#### `file`
+`VFile` | `Object` - File or object to walk over
+
+#### `visitor`
+`Function?` - Optional visitor to call while walking over nodes
+
+**`Returns`** `VFile`
 
 #### `visitor (current, parent, index)`
+<<<<<<< HEAD
 ##### `current` (`VFile`) - current node
 ##### `parent` (`VFile`) - parent of current node
 ##### `index` (`Number`) - index of current in parent.contents
@@ -171,3 +176,14 @@ Vfile-read uses fs.readdir and fs.readFile and options will be passed down to th
 ## License
 
 MIT &copy; Paul Zimmer
+=======
+
+##### `current`
+`VFile` - current node
+
+##### `parent`
+`VFile` - parent of current node
+
+##### `index`
+`Number` - index of current in parent.contents
+>>>>>>> feff4b8f5273fc165ba5cb0c423ffaaecad89c6c
