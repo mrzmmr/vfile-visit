@@ -1,0 +1,39 @@
+{
+  "name": "vfile-visit",
+  "version": "1.0.0",
+  "description": "visit and convert vfile contents to vfiles",
+  "main": "index.js",
+  "scripts": {
+    "xo": "xo --fix --space --no-esnext",
+    "tape": "tape test.js",
+    "report": "nyc report --reporter=text-lcov | coveralls",
+    "pretest": "npm run xo",
+    "test": "nyc npm run tape"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrzmmr/vfile-visit.git"
+  },
+  "keywords": [
+    "virtual",
+    "file",
+    "vfile",
+    "visit",
+    "walk"
+  ],
+  "author": "Paul Zimmer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mrzmmr/vfile-visit/issues"
+  },
+  "homepage": "https://github.com/mrzmmr/vfile-visit#readme",
+  "dependencies": {
+    "vfile": "^2.3.0"
+  },
+  "devDependencies": {
+    "coveralls": "^3.0.0",
+    "nyc": "^11.4.1",
+    "tape": "^4.8.0",
+    "xo": "^0.18.2"
+  }
+}
