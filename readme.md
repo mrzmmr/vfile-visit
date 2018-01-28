@@ -59,7 +59,7 @@ VFile {
 #### `visitor`
 `Function?` - Optional visitor to call while walking over nodes
 
-**`Returns`** `VFile`
+**`Returns`** - modified copy of `VFile`
 
 #### `visitor (current, parent, index)`
 
