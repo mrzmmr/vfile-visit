@@ -4,7 +4,7 @@
   "description": "visit and convert vfile contents to vfiles",
   "main": "index.js",
   "scripts": {
-    "xo": "xo --fix --space --no-esnext",
+    "xo": "xo --fix --space --no-esnext index.js",
     "tape": "tape test.js",
     "report": "nyc report --reporter=text-lcov | coveralls",
     "pretest": "npm run xo",
