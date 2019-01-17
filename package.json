@@ -4,15 +4,18 @@
   "description": "visit and convert vfile contents to vfiles",
   "main": "index.js",
   "scripts": {
-    "xo": "xo --fix --space --no-esnext index.js",
-    "tap": "tap test.js",
+    "xo": "xo --fix --no-esnext",
+    "tap": "tap test.js -Rspec --100",
     "report": "nyc report --reporter=text-lcov | coveralls",
-    "pretest": "npm run xo",
-    "test": "nyc npm run tap"
+    "test": "npm run xo && npm run tap"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mrzmmr/vfile-visit.git"
+  },
+  "xo": {
+    "space": true,
+    "tabWidth": 2
   },
   "keywords": [
     "virtual",
@@ -34,7 +37,6 @@
   "devDependencies": {
     "coveralls": "^3.0.2",
     "tap": "^12.1.1",
-    "xo": "^0.23.0",
-    "nyc": "^13.1.0"
+    "xo": "^0.23.0"
   }
 }
