@@ -1,10 +1,10 @@
 'use strict';
 
+var test = require('tap').test;
 var vfile = require('vfile');
-var tape = require('tape');
 var visit = require('./');
 
-tape('vfile-visit', function (t) {
+test('vfile-visit', function (t) {
   t.test('converts contents to vfile', function (st) {
     var foo = vfile({contents: [{path: 'bar', contents: ['hello']}]});
     foo = visit(foo);
