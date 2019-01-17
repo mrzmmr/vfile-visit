@@ -6,38 +6,34 @@ var clone = require('clone');
 module.exports = visit;
 
 function visit(file, callback) {
-  var root;
-  var list;
-  var i;
+  var fn = callback || function () {};
+  var root = vfile(clone(file));
 
-  file = clone(file);
+  one(root);
 
-  root = vfile({contents: [file]});
-  list = [file, root];
+  return root;
 
-  while (list.length > 0) {
-    var current = list.shift();
-    var parent = list.shift();
+  function one(file, index, parent) {
+    file = vfile(file);
 
-    var index = parent.contents.indexOf(current);
+    fn(file, index, parent);
 
-    if (!(current instanceof vfile)) {
-      current = vfile(current);
+    if (parent) {
+      parent.contents[index] = file;
     }
 
-    parent.contents[index] = current;
-
-    if (typeof callback === 'function') {
-      callback(current, parent, index);
-    }
-
-    if (Array.isArray(current.contents)) {
-      i = -1;
-      while (i++ < current.contents.length - 1) {
-        list.push(current.contents[i], current);
-      }
+    if (Array.isArray(file.contents)) {
+      each(file);
     }
   }
 
-  return root.contents[0];
+  function each(file) {
+    var index = -1;
+    var sub;
+
+    while (++index < file.contents.length) {
+      sub = file.contents[index];
+      one(sub, index, file);
+    }
+  }
 }
