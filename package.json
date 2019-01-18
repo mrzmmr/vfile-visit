@@ -1,6 +1,6 @@
 {
   "name": "vfile-visit",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "visit and convert vfile contents to vfiles",
   "main": "index.js",
   "scripts": {
