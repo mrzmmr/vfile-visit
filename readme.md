@@ -51,7 +51,7 @@ VFile {
 
 ## api
 
-### `read (file[, visitor])`
+### `visit (file[, visitor])`
 
 #### `file`
 `VFile` | `Object` - File or object to walk over
@@ -61,13 +61,13 @@ VFile {
 
 **`Returns`** - modified copy of `VFile`
 
-#### `visitor (current, parent, index)`
+#### `visitor (current, index, parent)`
 
 ##### `current`
 `VFile` - current node
 
-##### `parent`
-`VFile` - parent of current node
-
 ##### `index`
 `Number` - index of current in parent.contents
+
+##### `parent`
+`VFile` - parent of current node
