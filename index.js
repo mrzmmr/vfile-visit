@@ -1,39 +1,30 @@
 'use strict';
 
-var vfile = require('vfile');
-var clone = require('clone');
+const vfile = require('vfile');
+const clone = require('clone');
+
+const visit = (file, fn = () => {}) => {
+	const root = vfile(clone(file));
+
+	const each = (file, index, parent) => {
+		file = vfile(file);
+
+		fn(file, index, parent);
+
+		if (parent) {
+			parent.contents[index] = file;
+		}
+
+		if (Array.isArray(file.contents)) {
+			file.contents.forEach((sub, index) => {
+				each(sub, index, file);
+			});
+		}
+	};
+
+	each(root);
+
+	return root;
+};
 
 module.exports = visit;
-
-function visit(file, callback) {
-  var fn = callback || function () {};
-  var root = vfile(clone(file));
-
-  one(root);
-
-  return root;
-
-  function one(file, index, parent) {
-    file = vfile(file);
-
-    fn(file, index, parent);
-
-    if (parent) {
-      parent.contents[index] = file;
-    }
-
-    if (Array.isArray(file.contents)) {
-      each(file);
-    }
-  }
-
-  function each(file) {
-    var index = -1;
-    var sub;
-
-    while (++index < file.contents.length) {
-      sub = file.contents[index];
-      one(sub, index, file);
-    }
-  }
-}

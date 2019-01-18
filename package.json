@@ -1,42 +1,38 @@
 {
-  "name": "vfile-visit",
-  "version": "1.1.3",
-  "description": "visit and convert vfile contents to vfiles",
-  "main": "index.js",
-  "scripts": {
-    "xo": "xo --fix --no-esnext",
-    "tap": "tap test.js -Rspec --100",
-    "report": "nyc report --reporter=text-lcov | coveralls",
-    "test": "npm run xo && npm run tap"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mrzmmr/vfile-visit.git"
-  },
-  "xo": {
-    "space": true,
-    "tabWidth": 2
-  },
-  "keywords": [
-    "virtual",
-    "file",
-    "vfile",
-    "visit",
-    "walk"
-  ],
-  "author": "Paul Zimmer",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/mrzmmr/vfile-visit/issues"
-  },
-  "homepage": "https://github.com/mrzmmr/vfile-visit#readme",
-  "dependencies": {
-    "clone": "^2.1.1",
-    "vfile": "^2.3.0"
-  },
-  "devDependencies": {
-    "coveralls": "^3.0.2",
-    "tap": "^12.1.1",
-    "xo": "^0.23.0"
-  }
+	"name": "vfile-visit",
+	"version": "1.1.3",
+	"description": "visit and convert vfile contents to vfiles",
+	"main": "index.js",
+	"scripts": {
+		"xo": "xo --fix",
+		"tap": "tap test.js -Rspec --100",
+		"report": "nyc report --reporter=text-lcov | coveralls",
+		"test": "npm run xo && npm run tap"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/mrzmmr/vfile-visit.git"
+	},
+	"keywords": [
+		"virtual",
+		"file",
+		"vfile",
+		"visit",
+		"walk"
+	],
+	"author": "Paul Zimmer",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/mrzmmr/vfile-visit/issues"
+	},
+	"homepage": "https://github.com/mrzmmr/vfile-visit#readme",
+	"dependencies": {
+		"clone": "^2.1.1",
+		"vfile": "^2.3.0"
+	},
+	"devDependencies": {
+		"coveralls": "^3.0.2",
+		"tap": "^12.1.1",
+		"xo": "^0.23.0"
+	}
 }
